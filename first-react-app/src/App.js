@@ -1,12 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './components/NavBar';
+import "./App.css";
+import HomePage from "./pages/HomePage";
+import AdoptionForm from "./pages/AdoptionForm";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/adopt/:animalName" element={<AdoptionForm />} />
+      </Routes>
+    </Router>
   );
 }
 
